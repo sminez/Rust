@@ -1,0 +1,23 @@
+[Notes on Rust and Cargo]
+
+> Rust users rerfer to themselves as Rustaceans!
+
+> If you include a [dependencies] section in a project's Cargo.toml file then
+  cargo build will auto download and install the named dependencies! (including a defined
+  version number).
+  --> If, at a later date, the Crate is updated; the Cargo.lock file prevents any problems
+      with backwards incompatability by 'locking' the version you are using unless you
+      run cargo update. (NOTE: If you were on 0.3.0 before this will update to any 0.3.x
+      release but will NOT update to 0.4.x without changing the listing in Cargo.toml)
+
+> IDIOM: create a local scope 'shadow' of a current variable in order to do something with
+         it without having to come up with endless new names for similar values.
+
+> Rust has three levels of testing:
+  --> Inline tests denoted with #[test]
+  --> Including a test module via 'mod tests {#..test code..#}' headed with the
+      #[cfg(test)] attribute.
+  --> Doc tests to ensure that code examples in comments are valid: //! for module-level
+      documentation and /// for function level documentation.
+  NOTE: It is apparently also possible to have a testing directory for stand alone
+        integration tests but I have yet to get this working.
