@@ -10,3 +10,6 @@ http://doc.rust-lang.org/book/README.html
 http://rustbyexample.com/
 
 https://rust.zeef.com/harris.brakmic
+
+
+If you are looking for additional resources to explore then https://github.com/ctjhoa/rust-learning is a good place to start!
