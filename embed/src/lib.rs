@@ -9,6 +9,7 @@ NOTE: The additional keywords infront of the function definition do the followin
     NOTE: See the Cargo.toml file for additional changes needed for this to work!
 This is being compiled to a 'shared object' library that we then use as an external extension in
 embed.py
+NOTE: compile using 'cargo build --release'
 */
 #[no_mangle]
 pub extern fn process() {
@@ -18,10 +19,16 @@ pub extern fn process() {
             for _ in (0..5_000_001) {
                 _x += 1
             }
+            println!("done!");
         })
     }).collect();
 
     for h in handles {
         h.join().ok().expect("Could not join a thread!");
     }
+}
+
+#[no_mangle]
+pub extern fn double_me(x: i32) -> i32 {
+    x * 2
 }

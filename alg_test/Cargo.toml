@@ -1,0 +1,7 @@
+[package]
+name = "alg_test"
+version = "0.1.0"
+authors = ["Innes Morrison <innesdmorrison@gmail.com>"]
+
+[dependencies]
+num = "*"

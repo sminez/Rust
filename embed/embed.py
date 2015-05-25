@@ -11,4 +11,4 @@ from ctypes import cdll
 lib = cdll.LoadLibrary("target/release/libembed.so")
 lib.process()
 
-print("Done!")
+print("Using Rust, doubling 4 gives me ", lib.double_me(4))
